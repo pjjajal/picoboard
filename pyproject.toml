@@ -1,0 +1,22 @@
+[project]
+name = "picoboard"
+version = "0.0.1"
+authors = [{ name = "Purvish Jajal" }]
+description = "A simple tensorboard alternative that works in your terminal."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["loguru", "plotext", "rich"]
+
+[project.urls]
+Homepage = "https://github.com/pjjajal/picoboard"
+Issues = "https://github.com/pjjajal/picoboard/issues"
+
+[project.scripts]
+picoboard = "picoboard.cli:picoboard_cli"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["picoboard"]
