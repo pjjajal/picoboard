@@ -1,8 +1,12 @@
-# Copyright (c) 2023 Purvish Jajal
-#
-# This software is released under the MIT License.
-# https://opensource.org/licenses/MIT
+import loguru
 
-from .logger import PicoLogger, PicoParser
+from .picologger import PicoLogger
 
-__all__ = ["PicoLogger", "PicoParser"]
+__all__ = ["PicoLogger"]
+
+try:
+    from .extensions.lightning import PicoLoggerLightning
+
+    __all__.append("PicoLoggerLightning")
+except ModuleNotFoundError:
+    loguru.logger.warning("Lightning extension not available. Skipping import.")

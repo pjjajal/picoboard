@@ -5,18 +5,18 @@ authors = [{ name = "Purvish Jajal" }]
 description = "A simple tensorboard alternative that works in your terminal."
 readme = "README.md"
 requires-python = ">=3.9"
-dependencies = ["loguru", "plotext", "rich"]
+dependencies = ["tinydb", "loguru"]
+
+[project.optional-dependencies]
+lightning = ['lightning']
 
 [project.urls]
 Homepage = "https://github.com/pjjajal/picoboard"
 Issues = "https://github.com/pjjajal/picoboard/issues"
-
-[project.scripts]
-picoboard = "picoboard.cli:picoboard_cli"
 
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = ["picoboard"]
+packages = ["picoboard", "picoboard.picologger", "picoboard.extensions", "picoboard.utils"]
